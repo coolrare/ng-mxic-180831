@@ -25,11 +25,11 @@
   <div class="title-wrapper">
     <div class="container">
 
-      <img [src]="sitelogo" [title]="title" class="pull-left logo" alt="The Will Will Web">
+      <img (mousewheel)="incCounter()" [src]="sitelogo" [title]="title" class="pull-left logo" alt="The Will Will Web">
 
       <div class="pull-left">
         <h1><a href="http://blog.miniasp.com/">{{ title }}</a></h1>
-        <h3>{{ subtitle }}</h3>
+        <h3>{{ subtitle }} {{ counter }}</h3>
       </div>
 
       <div id="social-icons" class="pull-right social-icon">
