@@ -1,4 +1,4 @@
-<app-header></app-header>
+<app-header #tHeader></app-header>
 
 <!-- CONTAINER START-->
 <section class="container">
@@ -89,8 +89,8 @@
         <div class="widget search">
           <div class="widget-content">
             <div id="searchbox">
-              <input type="text" [(ngModel)]="keyword" placeholder="請輸入搜尋關鍵字" accesskey="s">
-              <input type="button" value="搜尋" id="searchbutton">
+              <input type="text" [value]="keyword" placeholder="請輸入搜尋關鍵字" accesskey="s" #tKeyword>
+              <input type="button" value="搜尋" id="searchbutton" (click)="changeKeyword(tKeyword.value);changeTitle(tHeader)">
               {{ keyword }}
             </div>
           </div>
