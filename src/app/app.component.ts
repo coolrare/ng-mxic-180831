@@ -20,6 +20,10 @@ export class AppComponent {
     })
   }
 
+  doDelete($event) {
+    console.log('您刪除了一篇文章: ', $event);
+  }
+
   changeKeyword(value: string) {
     this.keyword = value;
   }
