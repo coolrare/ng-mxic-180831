@@ -9,10 +9,23 @@ import { HeaderComponent } from './header/header.component';
 export class AppComponent {
   title = 'demo1';
   keyword = '123';
+
+  data = [];
+
+  ngOnInit(): void {
+    fetch('/api/articles.json').then((res) => {
+      res.json().then(value => {
+        this.data = value;
+      })
+    })
+  }
+
   changeKeyword(value: string) {
     this.keyword = value;
   }
   changeTitle(value: HeaderComponent) {
     value.title = this.keyword;
   }
+
+
 }
