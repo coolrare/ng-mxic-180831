@@ -25,11 +25,13 @@
   <div class="title-wrapper">
     <div class="container">
 
-      <img (click)="clickImg($event)" (mousewheel)="incCounter($event)" [src]="sitelogo" [title]="title" class="pull-left logo" alt="The Will Will Web" [attr.data-logo]="title">
+      <img (click)="clickImg($event)" (click)="incCounter($event)" [src]="sitelogo" [title]="title" class="pull-left logo" alt="The Will Will Web" [attr.data-logo]="title">
 
       <div class="pull-left">
         <h1><a href="http://blog.miniasp.com/">{{ title }}</a></h1>
-        <h3 [innerHTML]="subtitle"></h3>
+        <h3 [innerHTML]="subtitle"
+            [style.font-size]="(12+counter)+'px'"
+            [class.highlight]="counter % 2 == 0"></h3>
       </div>
 
       <div id="social-icons" class="pull-right social-icon">

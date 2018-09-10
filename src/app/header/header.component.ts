@@ -18,8 +18,9 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
 
-  incCounter($event) {
-    this.counter++;
+  incCounter($event: MouseEvent) {
+    if ($event.ctrlKey) this.counter--;
+    if (!$event.ctrlKey) this.counter++;
     console.log($event);
   }
 
