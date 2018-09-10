@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HeaderComponent } from './header/header.component';
 
 @Component({
@@ -6,11 +6,15 @@ import { HeaderComponent } from './header/header.component';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'demo1';
   keyword = '123';
 
   data = [];
+
+  constructor() {
+
+  }
 
   ngOnInit(): void {
     fetch('/api/articles.json').then((res) => {
