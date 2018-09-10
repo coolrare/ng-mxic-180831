@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
   }
 
   doDelete($event) {
-    console.log('您刪除了一篇文章: ', $event);
+    this.dataSvc.deleteArticle($event);
   }
 
   changeKeyword(value: string) {
